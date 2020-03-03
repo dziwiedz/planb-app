@@ -1,0 +1,61 @@
+name: PlanB
+options:
+  bundleIdPrefix: com.niedzwiedz
+configs:
+  Test_PlanB: debug
+  Dev_PlanB: debug
+  Release_PlanB: release
+configFiles:
+  Test_PlanB: Configs/test_planb.xcconfig
+  Dev_PlanB: Configs/dev_planb.xcconfig
+  Release_PlanB: Configs/release_planb.xcconfig
+targets:
+  PlanB:
+    type: application
+    platform: iOS
+    sources: [PlanB]
+    testTargets:
+      - PlanBTests
+    preBuildScripts:
+      - path: Tools/Swiftlint/Swiftlint.sh
+        name: Swiftlint 
+  PlanBTests:
+    sources: PlanBTests
+    type: bundle.unit-test
+    dependencies:
+      - target: PlanB
+      - carthage: SnapshotTesting
+    preBuildScripts:
+      - path: Tools/Sourcery/Sourcery.sh
+        name: Sourcery 
+    platform: iOS
+    info: 
+      path: PlanBTests/Supporting Files/Info.plist
+schemes:
+  PlanB:
+    templates:
+      - EnvScheme
+
+schemeTemplates:
+  EnvScheme:
+    build:
+      targets:
+        PlanB: all
+        PlanBTests: [test]
+    run:
+      config: Dev_${scheme_name}
+    test: 
+      config: Test_${scheme_name}
+      gatherCoverageData: true
+      targets:
+        - PlanBTests
+      environmentVariables:
+        - variable: IS_TESTING
+          value: true
+          isEnabled: true 
+    profile:
+      config: Dev_${scheme_name}
+    analyze:
+      config: Dev_${scheme_name}
+    archive:
+      config: Release_${scheme_name}

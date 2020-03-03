@@ -1,0 +1,1 @@
+Pods/Sourcery/bin/sourcery --config Tools/Sourcery/config.yml

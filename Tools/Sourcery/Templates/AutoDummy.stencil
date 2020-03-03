@@ -1,0 +1,34 @@
+// Created by Lukasz Niedzwiedz
+// swiftlint:disable line_length
+// swiftlint:disable variable_name
+@testable import PlanB
+
+{% macro getDefaultValue varibale %}{% if variable|annotated:"defaultValue"%}{{variable.annotations.defaultValue}}{% else %}.dummy(){% endif %}{% endmacro %}
+{% macro listAllParameters type %}{% for variable in type.allVariables %}{{variable.name}}: {{variable.typeName}} = {% call getDefaultValue variable%}{% ifnot forloop.last %}, {% endif %}{% endfor %}{% endmacro %}
+
+{% for type in types.structs where type|annotated:"AutoDummy" %}
+extension {{type.name}} {
+	static func dummy({% call listAllParameters type%}) -> {{type.name}} {
+		return {{type.name}}({%for var in type.allVariables%}{{var.name}}: {{var.name}}{% ifnot forloop.last %}, {% endif %}{%endfor%})
+	}
+}
+{% endfor %}
+
+// MARK: - Dummies
+extension String {
+    static func dummy() -> String {
+        return ""
+    }
+}
+
+extension Int {
+    static func dummy() -> Int {
+        return .max
+    }
+}
+
+extension Bool {
+    static func dummy() -> Bool {
+        return false
+    }
+}

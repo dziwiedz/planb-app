@@ -1,0 +1,1 @@
+Pods/SwiftLint/swiftlint --path Tools/SwiftLint/config.yml

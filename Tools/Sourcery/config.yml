@@ -1,0 +1,7 @@
+sources:
+  - ../../PlanB/
+templates:
+  - Templates/AutoMockable.stencil
+  - Templates/AutoDummy.stencil
+output:
+  ../../PlanBTests/Generated/

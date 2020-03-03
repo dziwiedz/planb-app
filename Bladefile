@@ -1,0 +1,3 @@
+blades:
+  - source: Assets/Icon.png
+    mount: PlanB/Supporting Files/Assets.xcassets/AppIcon.appiconset
