@@ -1,0 +1,7 @@
+excluded:
+  - Pods/
+  - Carthage/
+  - Tools/
+include:
+  - PlanB/
+  - PlanBTests/
