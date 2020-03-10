@@ -8,7 +8,5 @@ gem "cocoapods"
 gem "fastlane"
 gem "danger"
 gem "danger-xcov"
-gem "danger-xcode_summary"
 gem "danger-todoist"
-gem "xcpretty"
-gem "xcpretty-json-formatter"
+gem 'danger-swiftlint'
