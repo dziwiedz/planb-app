@@ -1,0 +1,28 @@
+name: CI
+
+on: [pull_request]
+
+jobs:
+  build_and_test:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Caching gems
+      uses: actions/cache@v1
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: ${{ runner.os }}-gem-
+    - name: Caching pods
+      uses: actions/cache@v1
+      with:
+        path: Pods
+        key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+        restore-keys: ${{ runner.os }}-pods-
+    - name: Bootstraping project
+      run: make bootstrap
+    - name: Running unit tests
+      run: bundle exec fastlane ios unit_tests
+      env: 
+        DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
+        
