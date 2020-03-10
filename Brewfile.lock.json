@@ -1,0 +1,65 @@
+{
+  "entries": {
+    "tap": {
+      "jondot/tap": {
+        "revision": "181af2a13cd0593184ecad9524e7f2e1c4ac9a1a"
+      }
+    },
+    "brew": {
+      "blade": {
+        "version": "0.0.9",
+        "bottle": false
+      },
+      "xcodegen": {
+        "version": "2.14.0",
+        "bottle": {
+          "cellar": ":any_skip_relocation",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/xcodegen-2.14.0.catalina.bottle.tar.gz",
+              "sha256": "719bd1987a8a8d93194e882b27b6d84f5e50ae51b9695bcec4cf4d05a472882b"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/xcodegen-2.14.0.mojave.bottle.tar.gz",
+              "sha256": "ea1549db98385d013e195d4fb197d54e23476b65617f98d418838cb2188201a7"
+            }
+          }
+        }
+      },
+      "git-lfs": {
+        "version": "2.10.0",
+        "bottle": {
+          "cellar": ":any_skip_relocation",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/git-lfs-2.10.0.catalina.bottle.tar.gz",
+              "sha256": "8fec7d8b8ad7c3332bfa1862dd8615712dab8315a9128ed8b5609fa1659431e7"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/git-lfs-2.10.0.mojave.bottle.tar.gz",
+              "sha256": "3c5bcef656ca742c6697b952c9f7c483c1fad046f52136dbe9ee0f16f44835c4"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/git-lfs-2.10.0.high_sierra.bottle.tar.gz",
+              "sha256": "ed0d8f1271d9d81a2c22622023c260ef040f2172e75357893ef54134bc6eedff"
+            }
+          }
+        }
+      }
+    }
+  },
+  "system": {
+    "macos": {
+      "catalina": {
+        "HOMEBREW_VERSION": "2.2.7",
+        "HOMEBREW_PREFIX": "/usr/local",
+        "Homebrew/homebrew-core": "315b9f858edda64fedb0af242aedf022577845e6",
+        "CLT": "",
+        "Xcode": "11.3.1",
+        "macOS": "10.15.3"
+      }
+    }
+  }
+}
