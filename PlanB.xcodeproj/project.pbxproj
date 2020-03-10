@@ -11,6 +11,7 @@
 		0D2C5E78A6E029AAA5CF493C /* SnapshotTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4779B46374F388BB230C69C3 /* SnapshotTesting.framework */; };
 		442419C1ECD330F266021C2C /* AutoDummy.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51706E16111204D729C352C6 /* AutoDummy.generated.swift */; };
 		566ACBFAFC8CD955FE0AEF3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A0355444DBD8CEA2311626 /* SceneDelegate.swift */; };
+		6F3F745C8BF622C430F583ED /* assets-colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B34C5A6080F6E1DC62A37E0 /* assets-colors.swift */; };
 		91694BBF686ECC59C2CD27E0 /* SnapshotTesting.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4779B46374F388BB230C69C3 /* SnapshotTesting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AB38F9846054104D87F60381 /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA3A32D85AAB0B7625CD16 /* AutoMockable.generated.swift */; };
 		C9431F027896A2DE731EC8D3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7E56418ACB9C20A9298F440 /* Colors.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1B34C5A6080F6E1DC62A37E0 /* assets-colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assets-colors.swift"; sourceTree = "<group>"; };
 		35A0355444DBD8CEA2311626 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		453B9B1E5813633A9DB8E5DD /* PlanBTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PlanBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4779B46374F388BB230C69C3 /* SnapshotTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SnapshotTesting.framework; sourceTree = "<group>"; };
@@ -81,18 +83,11 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
-		223A1CD4240EFF6000682182 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
 		235ADCCF81E02E3FD6B25CFB /* PlanB */ = {
 			isa = PBXGroup;
 			children = (
-				223A1CD4240EFF6000682182 /* Modules */,
 				CA77AA6410E9C06F3D8C652D /* AppDelegate */,
+				CF4A73F08CA97E1B324DA6ED /* Generated */,
 				3A42E020B56224C8782BD83D /* Supporting Files */,
 			);
 			path = PlanB;
@@ -173,6 +168,14 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
+		CF4A73F08CA97E1B324DA6ED /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				1B34C5A6080F6E1DC62A37E0 /* assets-colors.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		D23E24BE5D9043390C1DED15 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,9 +240,6 @@
 			attributes = {
 				LastUpgradeCheck = 1020;
 				TargetAttributes = {
-					5D258C5D822A72DBAB8052FE = {
-						TestTargetID = 5E592F9048F087C1CCBA82BB;
-					};
 				};
 			};
 			buildConfigurationList = 757D5439C11A68903FAA04BB /* Build configuration list for PBXProject "PlanB" */;
@@ -247,7 +247,6 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				Base,
 				en,
 			);
 			mainGroup = 4F450140DA72ECB6F917E9E7;
@@ -319,6 +318,7 @@
 			files = (
 				EE613F0E7F9C8218176A6180 /* AppDelegate.swift in Sources */,
 				566ACBFAFC8CD955FE0AEF3E /* SceneDelegate.swift in Sources */,
+				6F3F745C8BF622C430F583ED /* assets-colors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,7 +535,6 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlanB.app/PlanB";
-				TEST_TARGET_NAME = PlanB;
 			};
 			name = Test_PlanB;
 		};
@@ -573,7 +572,6 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlanB.app/PlanB";
-				TEST_TARGET_NAME = PlanB;
 			};
 			name = Dev_PlanB;
 		};
@@ -595,7 +593,6 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlanB.app/PlanB";
-				TEST_TARGET_NAME = PlanB;
 			};
 			name = Release_PlanB;
 		};
@@ -636,7 +633,7 @@
 				F316FA6F3017E4481140882E /* Test_PlanB */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "";
+			defaultConfigurationName = Dev_PlanB;
 		};
 		D3E16CCD9ADA61C55551F282 /* Build configuration list for PBXNativeTarget "PlanBTests" */ = {
 			isa = XCConfigurationList;
@@ -646,7 +643,7 @@
 				95C997088808E5F577449912 /* Test_PlanB */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "";
+			defaultConfigurationName = Dev_PlanB;
 		};
 /* End XCConfigurationList section */
 	};

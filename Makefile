@@ -21,6 +21,9 @@ generate:
 blade:
 	echo "~~~> blade --verbose"
 	@blade --verbose
+colors:
+	echo "~~~> SwiftGen: Colors & Assets"
+	@Pods/SwiftGen/bin/swiftgen
 carthage_clean: ## clean up all Carthage directories
 	@rm -rf Carthage
 carthage_update: ## update carthage packages

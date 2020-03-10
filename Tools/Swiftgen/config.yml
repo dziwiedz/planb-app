@@ -1,0 +1,12 @@
+xcassets:
+  inputs:
+    - ../../PlanB/Supporting Files/Assets.xcassets
+  outputs:
+    - templateName: swift4
+      output: ../../PlanB/Generated/assets-images.swift
+xcassets:
+  inputs: 
+    - ../../PlanB/Supporting Files/Assets.xcassets
+  outputs:
+    - templateName: swift4
+      output: ../../PlanB/Generated/assets-colors.swift

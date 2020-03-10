@@ -4,4 +4,5 @@ target 'PlanB' do
   use_frameworks!
   pod 'Sourcery'
   pod 'SwiftLint'
+  pod 'SwiftGen'
 end
