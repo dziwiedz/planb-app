@@ -15,8 +15,8 @@ fail("fit left in tests") if `grep -r fit specs/ `.length > 1
 xcode_summary.report 'xcodebuild.json'
 
 
-swiftlint.config_file = 'Tools/Swiftlint/config.yml'
-swiftlint.lint_files
+# swiftlint.config_file = 'Tools/Swiftlint/config.yml'
+# swiftlint.lint_files
 todoist.warn_for_todos
 
 xcov.report(
