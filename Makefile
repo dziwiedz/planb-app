@@ -1,7 +1,6 @@
 CARTHAGE_FRAMEWORKS=ls Carthage/Build/iOS/*.framework | grep "\.framework" | cut -d "/" -f 4 | cut -d "." -f 1 | xargs -I '{}'
 CARTHAGE_ARCHIVES=ls PreBuiltFrameworks/*.zip | grep "\.zip" | cut -d "/" -f 2 | cut -d "." -f 1 | xargs -I '{}'
 
-
 bootstrap_core:
 	echo "~~~> bundle install"
 	@bundle install
@@ -9,7 +8,7 @@ bootstrap_core:
 install-pods:
 	echo "~~~> bundle exec pod install"
 	@bundle exec pod install
-bootstrap: bootstrap_core install-pods
+bootstrap: bootstrap_core carthage_extract install-pods
 
 install-git-lfs:
 	echo "~~~~>lfs install"
