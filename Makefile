@@ -1,8 +1,6 @@
-CARTHAGE_FRAMEWORKS=ls Carthage/Build/iOS/*.framework | grep "\.framework" | cut -d "/" -f 4 | cut -d "." -f 1 | xargs -I '{}'
+CARTHAGE_FRAMEWORKS=ls Carthage/Build/iOS/ | grep '\.framework$$' | cut -d "/" -f 4 | cut -d "." -f 1 | xargs -I '{}'
 CARTHAGE_ARCHIVES=ls PreBuiltFrameworks/*.zip | grep "\.zip" | cut -d "/" -f 2 | cut -d "." -f 1 | xargs -I '{}'
 
-install-brews:
-	@brew bundle
 bootstrap_core:
 	echo "~~~> bundle install"
 	@bundle install
@@ -10,7 +8,7 @@ bootstrap_core:
 install-pods:
 	echo "~~~> bundle exec pod install"
 	@bundle exec pod install
-bootstrap: bootstrap_core install-brews carthage_extract generate blade install-pods
+bootstrap: bootstrap_core carthage_extract install-pods
 
 install-git-lfs:
 	echo "~~~~>lfs install"
@@ -35,10 +33,6 @@ carthage_archive: carthage_update ## update and archive carthage packages
 
 carthage_track: carthage_archive ## track and commit carthage frameworks
 	git lfs track PreBuiltFrameworks/*.zip
-	git add .gitattributes
-	git commit -m "Tracking Prebuilt Frameworks"
-	git add PreBuiltFrameworks/*.zip
-	git commit -m "Adding Prebuild Framworks"
 
 carthage_extract: carthage_clean ## extract from carthage archives
 	echo "~~~> Extracting carthage frameworks"
