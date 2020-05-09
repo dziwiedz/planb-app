@@ -9,7 +9,7 @@ bootstrap_core:
 install-pods:
 	echo "~~~> bundle exec pod install"
 	@bundle exec pod install
-bootstrap: bootstrap_core install-brews carthage_extract install-pods
+bootstrap: bootstrap_core install-pods
 
 install-git-lfs:
 	echo "~~~~>lfs install"
